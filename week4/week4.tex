@@ -1,0 +1,281 @@
+
+\documentclass[10pt]{beamer}
+\usepackage{kotex}
+
+\usepackage{framed}
+\usepackage{graphicx}
+%https://www.overleaf.com/learn/latex/Inserting_Images
+
+\usepackage{amsmath}
+%use dfrac
+\usepackage{xcolor}
+
+\usepackage{amsthm}
+%\usepackage{tabl}
+\usepackage{listings}
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+%https://tex.stackexchange.com/questions/348651/c-code-to-add-in-the-document
+\lstdefinestyle{CppStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C++
+}
+
+\usepackage{url}
+
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\singlespacing\small}
+
+
+\usepackage{thmtools}
+\usepackage{xcolor}
+\declaretheoremstyle[% spaceabove=6pt,spacebelow=6pt, headfont=\color{MainColorOne}\sffamily\bfseries, notefont=\mdseries, notebraces={[}{]}, bodyfont=\normalfont,
+headpunct={},
+postheadspace=1em,
+%qed=▣,
+]{maintheorem}
+
+\declaretheorem[%
+name=정의,
+style=maintheorem,
+numberwithin=section, shaded={%bgcolor=MainColorThree!20,
+margin=.5em}]{dfn}
+% \begin{dfn}[]
+% \end{dfn}
+
+\setbeamertemplate{footline}[frame number]
+
+\usetheme{Hannover}
+%\usetheme{CambridgeUS}
+
+
+\title{치환법, 마스터 정리}
+
+\author{EUnS}
+
+\begin{document}
+
+
+\begin{frame}{}
+    \maketitle
+\end{frame}
+
+% \begin{frame}{}
+%     \tableofcontents
+% \end{frame}   
+
+\begin{frame}{치환법}
+    \begin{enumerate}
+        \item 해의 모양을 추측한다.
+        \item 상수들의 값을 찾아내기 위해 수학적 귀납법을 사용하고 제대로 동작함을 보인다.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{치환법}
+    $$T(n) = 2T(n/2) + n$$
+    \begin{enumerate}
+        \item $T(n) \le cn \lg n$이라고 추측
+    \end{enumerate}
+    \[
+        \begin{aligned}
+           T(n) &\le 2c(n/2\lg (n/2)) +n \\
+            &= cn\lg n - n + n \\ 
+            &\le cn\lg n
+        \end{aligned}
+    \]
+\end{frame}
+
+
+\begin{frame}{치환법}
+    $$T(n) = 2T(n/2) + 1$$
+    \begin{itemize}
+        \item $T(n) = O(n)$이라고 추측
+    \end{itemize}
+    \[
+        \begin{aligned}
+           T(n) &\le 2c(n/2) +1 \\
+            &= cn + 1
+        \end{aligned}
+    \]
+    \begin{itemize}
+        \item $T(n) \le cn $ X
+        \item $cn$보다 좀더 작은 값을 추측할것.
+    \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{치환법}
+    $$T(n) = 2T(n/2) + 1$$
+    \begin{itemize}
+        \item $T(n) \le cn - d$이라고 추측
+    \end{itemize}
+    \[
+        \begin{aligned}
+           T(n) &\le 2c(n/2)-d +1 \\
+            &= cn -2d + 1 \\
+            &\le cn - d
+        \end{aligned}
+    \]
+\end{frame}
+
+
+\begin{frame}{마스터 정리}
+    $a(\ge 1)$와 $b(> 1)$가 상수고 $f(n))$이 양의 함수라 하고, 음이 아닌 정수에 대해 $T(n)$이 다음 점화식에 의해 정의된다고 하자.
+    $$T(n) = aT(n/b) + f(n)$$
+    여기서 $n/b$는 $\lfloor n/b \rfloor \lceil n/b \rceil$를 뜻한다. 이때 $T(n)$의 점근적 한계는 다음과 같다.
+    \begin{enumerate}
+        \item 상수 $\epsilon(>0)$에 대해 $f(n) = O(n^{\log_b a-\epsilon})$이면, $T(n) = \Theta(n^{\log_b a})$이다.
+        \item $f(n) = \Theta(n^{\log_b a})$이면, $T(n) = \Theta(n^{\log_b a} \lg n)$이다.
+        \item 상수 $c(<1)$와 충분히 큰 모든 $n$에 대해 $af(n/b) \le cf(n)$이면, $T(n) = \Theta(f(n))$이다.
+    \end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}{ex}
+    $T(n) = 9T(n/3) + n$
+    \begin{itemize}
+        \item $a = 9$
+        \item $b = 3$
+        \item $f(n) = n = O(n ^{\log _3 9 - \epsilon})$
+        \item case 1
+        $$\Theta(n^2)$$
+    \end{itemize}
+     $T(n) = T(2n/3) + 1$
+     \begin{itemize}
+         \item $a = 1$
+         \item $b = 3/2$
+         \item $f(n) = 1 = \Theta(n ^{\log _{3/2}1}) = \Theta(1)$
+        \item case 2
+        $$\Theta(\lg n)$$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{ex}
+    $T(n) = 3T(n/4) + n\lg n$
+    \begin{itemize}
+        \item $a = 3$
+        \item $b = 4$
+        \item $c = 3/4$일 때 $af(n/b) = 3(n/4) \lg(n/4) \le (3/4)n \lg n = cf(n)$
+        \item case 3
+        $$\Theta(nlg n)$$
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{스트라센 알고리즘}
+    $T(n) = 7T(n/2) + \Theta(n^2)$
+
+    \begin{itemize}
+        \item $a = 7$
+        \item $b = 2$
+        \item $f(n) = n^2 = O(n ^{\log _2 7 - \epsilon})$
+        \item case 1
+        $$\Theta(n^{lg 7})$$
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{적용할수 없는것들}
+    $T(n) = 2T(n/2) + n\lg n$
+    \begin{itemize}
+        \item $a = 2$
+        \item $b = 2$
+        \item $af(n/b) = 2(n/2) \lg(n/2) \le (3/4)n \lg n = cf(n)$ 인 $c$를 잡을 수 없음.
+        \item case 3 X
+        \item ???
+        \item $f(n)$이 $n^{\log_b a}$보다 다항식적으로 크지않다면 구할 수 없음.
+    \end{itemize}
+\end{frame}
+
+
+
+% \begin{frame}{}
+%     \begin{figure}[h!]
+%         %\centering
+%         \includegraphics[scale=0.25]{}
+%         \caption{}
+%     \end{figure}
+% \end{frame}    
+
+
+
+\end{document}
+
+
+\begin{frame}{$\Theta$}
+    \begin{itemize}
+        \item 
+        \item 
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{$\Omega$}
+    \begin{itemize}
+        \item 
+        \item 
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}{$\Omega$}
+    \begin{itemize}
+        \item 
+        \item 
+        \item 
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{}
+        
+    \begin{lstlisting}[style = CppStyle]
+    
+    \end{lstlisting}
+
+\end{frame}    
+
+
+% \begin{frame}{}
+%     \begin{figure}[h!]
+%         %\centering
+%         \includegraphics[scale=0.25]{}
+%         \caption{}
+%     \end{figure}
+% \end{frame}    
+
+% \stop
+
+
+\begin{frame}{}
+    \href{}{\textcolor{blue}{참고}}
+\end{frame}
+
+
+\begin{frame}{$O$}
+    \begin{itemize}
+        \item 
+        \item 
+        \item 
+    \end{itemize}
+\end{frame}
+
