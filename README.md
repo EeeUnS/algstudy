@@ -40,3 +40,8 @@
 선수 들을것 
 - [퀵소트 13분컷](https://youtu.be/cWH49IKDIiI)
 - [퀵소트 한시간 컷](https://www.youtube.com/watch?v=hq4dpyuX4Uw&list=PL52K_8WQO5oUuH06MLOrah4h05TZ4n38l&index=11)
+
+---
+
+내용 다 이해했으면 다음 파일 한번 읽어보는거 추천
+[quicksort](https://github.com/EeeUnS/algstudy/blob/master/IntroductionToQuicksort.pdf)
