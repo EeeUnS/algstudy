@@ -9,7 +9,7 @@
 
 
 - 선수들을것.
- -  [권오흠 교수님 시간복잡도 19강 예습](https://www.youtube.com/watch?v=kg-bcK1ygIA&list=PL52K_8WQO5oXIATx2vcTvqwxXxoGxxsIz&index=43)
+    -  [권오흠 교수님 시간복잡도 19강 예습](https://www.youtube.com/watch?v=kg-bcK1ygIA&list=PL52K_8WQO5oXIATx2vcTvqwxXxoGxxsIz&index=43)
 
 
 2. 주차 insertion sort,  분할정복 , 최대부분수열
