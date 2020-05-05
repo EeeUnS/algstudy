@@ -87,9 +87,9 @@ margin=.5em}]{dfn}
 \begin{frame}{merge sort}
     \href{https://www.youtube.com/watch?v=2YvFRAC8UTM&list=PL52K_8WQO5oUuH06MLOrah4h05TZ4n38l&index=11&t=0s}{\textcolor{blue}{참고}}
     \begin{itemize}
-        \item $\Theta(n\lg n)$
-        \item 분할 : 정렬할 n개의 원소의 배열을 $n/2$개씩 부분 수열 두 개로 분할한다.
-        \item 정복 : 두 부분 배열을 재귀적으로 정렬한다.
+        \item $\Theta(n\lg n)$ \pause
+        \item 분할 : 정렬할 n개의 원소의 배열을 $n/2$개씩 부분 수열 두 개로 분할한다. \pause
+        \item 정복 : 두 부분 배열을 재귀적으로 정렬한다. \pause
         \item 결합: 정렬된 두 개의 부분 배열을 병합해 정렬된 배열 하나로 만든다.
     \end{itemize}
 \end{frame}
@@ -107,8 +107,20 @@ margin=.5em}]{dfn}
 
 
 
+
 \begin{frame}[fragile]{}
-        
+    \begin{lstlisting}[style = CppStyle]
+    MERGE-SORT(A, p, r)
+        if p < r
+            q = (p + r)/2
+            MERGE-SORT(A, p, q)
+            MERGE-SORT(A, q + 1, r)
+            MERGE(A, p, q, r)
+    \end{lstlisting}
+\end{frame}    
+
+
+\begin{frame}[fragile]{}
     \begin{lstlisting}[style = CppStyle]
     MERGE(A, p, q, r)
         n1 = q - p + 1
@@ -133,19 +145,6 @@ margin=.5em}]{dfn}
 
 \end{frame}    
 
-\begin{frame}[fragile]{}
-    \begin{lstlisting}[style = CppStyle]
-    MERGE-SORT(A, p, r)
-        if p < r
-            q = (p + r)/2
-            MERGE-SORT(A, p, q)
-            MERGE-SORT(A, q + 1, r)
-            MERGE(A, p, q, r)
-    \end{lstlisting}
-\end{frame}    
-
-
-
 \begin{frame}{점화식}
 
     \begin{itemize}
@@ -168,8 +167,8 @@ margin=.5em}]{dfn}
 \begin{frame}{머지소트 점화식}
 
     \begin{itemize}
-        \item 분할 : $D(n) = \Theta(1)$
-        \item 정복 : $2T(n/2)$
+        \item 분할 : $D(n) = \Theta(1)$ \pause
+        \item 정복 : $2T(n/2)$ \pause
         \item 결합 : $C(n) = \Theta(n)$
     \end{itemize}
 
@@ -187,8 +186,8 @@ margin=.5em}]{dfn}
 
 \begin{frame}{점화식 풀이법}
     \begin{itemize}
-        \item 재귀 트리 방법(recursion tree method)
-        \item 치환법(substitution method)
+        \item 재귀 트리 방법(recursion tree method) \pause
+        \item 치환법(substitution method) \pause
         \item 마스터 방법(master method)
     \end{itemize}
 \end{frame}
@@ -223,9 +222,9 @@ margin=.5em}]{dfn}
 \begin{frame}[fragile]{풀이}
     \[
         \begin{aligned}
-            T(n) &= \sum_{i=0}^{\log_4 n-1} \left( \dfrac{3}{16} \right)  ^i cn^2 + \Theta(n^{\log_4 3}) \\
-            &<  \sum_{i=0}^{\infty} \left( \dfrac{3}{16} \right)^i cn^2 + \Theta(n^{\log_4 3}) \\
-            &= \dfrac{1}{1-(3/16)}cn^2 + \Theta(n^{\log_4 3})\\
+            T(n) &= \sum_{i=0}^{\log_4 n-1} \left( \dfrac{3}{16} \right)  ^i cn^2 + \Theta(n^{\log_4 3}) \\ \pause
+            &<  \sum_{i=0}^{\infty} \left( \dfrac{3}{16} \right)^i cn^2 + \Theta(n^{\log_4 3}) \\ \pause
+            &= \dfrac{1}{1-(3/16)}cn^2 + \Theta(n^{\log_4 3})\\ \pause
             &= O(n^2)
         \end{aligned}
     \]

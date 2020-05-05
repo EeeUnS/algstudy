@@ -95,8 +95,8 @@ margin=.5em}]{dfn}
     \end{enumerate}
     \[
         \begin{aligned}
-           T(n) &\le 2c(n/2\lg (n/2)) +n \\
-            &= cn\lg n - n + n \\ 
+           T(n) &\le 2c(n/2\lg (n/2)) +n \\ \pause
+            &= cn\lg n - n + n \\  \pause
             &\le cn\lg n
         \end{aligned}
     \]
@@ -110,12 +110,12 @@ margin=.5em}]{dfn}
     \end{itemize}
     \[
         \begin{aligned}
-           T(n) &\le 2c(n/2) +1 \\
+           T(n) &\le 2c(n/2) +1 \\ \pause
             &= cn + 1
         \end{aligned}
     \]
     \begin{itemize}
-        \item $T(n) \le cn $ X
+        \item $T(n) \le cn $ X \pause
         \item $cn$보다 좀더 작은 값을 추측할것.
     \end{itemize}
 
@@ -129,8 +129,8 @@ margin=.5em}]{dfn}
     \end{itemize}
     \[
         \begin{aligned}
-           T(n) &\le 2c(n/2)-d +1 \\
-            &= cn -2d + 1 \\
+           T(n) &\le 2c(n/2)-d +1 \\ \pause
+            &= cn -2d + 1 \\ \pause
             &\le cn - d
         \end{aligned}
     \]
@@ -151,54 +151,54 @@ margin=.5em}]{dfn}
 
 
 \begin{frame}{ex}
-    $T(n) = 9T(n/3) + n$
+    $T(n) = 9T(n/3) + n$ \pause
     \begin{itemize}
-        \item $a = 9$
-        \item $b = 3$
-        \item $f(n) = n = O(n ^{\log _3 9 - \epsilon})$
-        \item case 1
+        \item $a = 9$ \pause
+        \item $b = 3$ \pause
+        \item $f(n) = n = O(n ^{\log _3 9 - \epsilon})$ \pause
+        \item case 1 \pause
         $$\Theta(n^2)$$
     \end{itemize}
-     $T(n) = T(2n/3) + 1$
+     $T(n) = T(2n/3) + 1$ \pause
      \begin{itemize}
-         \item $a = 1$
-         \item $b = 3/2$
-         \item $f(n) = 1 = \Theta(n ^{\log _{3/2}1}) = \Theta(1)$
-        \item case 2
+         \item $a = 1$ \pause
+         \item $b = 3/2$ \pause
+         \item $f(n) = 1 = \Theta(n ^{\log _{3/2}1}) = \Theta(1)$ \pause
+        \item case 2 \pause
         $$\Theta(\lg n)$$
     \end{itemize}
 \end{frame}
 
 \begin{frame}{ex}
-    $T(n) = 3T(n/4) + n\lg n$
+    $T(n) = 3T(n/4) + n\lg n$ \pause
     \begin{itemize}
-        \item $a = 3$
-        \item $b = 4$
-        \item $c = 3/4$일 때 $af(n/b) = 3(n/4) \lg(n/4) \le (3/4)n \lg n = cf(n)$
-        \item case 3
+        \item $a = 3$ \pause
+        \item $b = 4$ \pause
+        \item $c = 3/4$일 때 $af(n/b) = 3(n/4) \lg(n/4) \le (3/4)n \lg n = cf(n)$ \pause
+        \item case 3 \pause
         $$\Theta(nlg n)$$
     \end{itemize}
 \end{frame}
 
 
 \begin{frame}{스트라센 알고리즘}
-    $T(n) = 7T(n/2) + \Theta(n^2)$
+    $T(n) = 7T(n/2) + \Theta(n^2)$ \pause
 
     \begin{itemize}
-        \item $a = 7$
-        \item $b = 2$
-        \item $f(n) = n^2 = O(n ^{\log _2 7 - \epsilon})$
-        \item case 1
+        \item $a = 7$ \pause
+        \item $b = 2$ \pause
+        \item $f(n) = n^2 = O(n ^{\log _2 7 - \epsilon})$ \pause
+        \item case 1 \pause
         $$\Theta(n^{lg 7})$$
     \end{itemize}
 \end{frame}
 
 
-\begin{frame}{적용할수 없는것들}
-    $T(n) = 2T(n/2) + n\lg n$
+\begin{frame}{적용할 수 없는 점화식}
+    $T(n) = 2T(n/2) + n\lg n$ \pause
     \begin{itemize}
-        \item $a = 2$
-        \item $b = 2$
+        \item $a = 2$ \pause
+        \item $b = 2$ \pause
         \item $af(n/b) = 2(n/2) \lg(n/2) \le (3/4)n \lg n = cf(n)$ 인 $c$를 잡을 수 없음.
         \item case 3 X
         \item ???

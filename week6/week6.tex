@@ -132,13 +132,15 @@ margin=.5em}]{dfn}
     \end{itemize}
     $$T(n) = T(n-1) + cn $$
     \pause
-    \begin{align*}
-        T(n) &= T(n-1) + cn \\
-        &= T(n-2) + c(n-1) +cn \\
-        &= c\sum^{n}_{k=1}k \\
-        &= \dfrac{1}{2} cn^{2}\\
-        &= \Theta (n^{2})    
-    \end{align*}
+    \[
+        \begin{aligned}
+            T(n) &= T(n-1) + cn \\ \pause
+            &= T(n-2) + c(n-1) +cn \\  \pause
+            &= c\sum^{n}_{k=1}k \\ \pause
+            &= \dfrac{1}{2} cn^{2}\\ \pause
+            &= \Theta (n^{2})    
+        \end{aligned}
+    \]
 \end{frame}
 
 
@@ -149,14 +151,11 @@ margin=.5em}]{dfn}
     \end{itemize}
     \pause
     $$T(n) = 2T\left( \dfrac{n}{2}  \right) + cn $$
-    \pause
-    \begin{align*}
-        T(n) &= T(n-1) + cn \\
-        &= T(n-2) + c(n-1) +cn \\
-        &= c\sum^{n}_{k=1}k \\
-        &= \dfrac{1}{2} cn^{2}\\
-        &= \Theta (n^{2})    
-    \end{align*}
+    \begin{itemize}
+        \item 마스터 정리 case 2
+    \end{itemize}
+    $$\Theta(n\log n)$$
+    
 \end{frame}
 
 \subsection{일반적인 케이스 직관적인 방법} 
@@ -228,8 +227,8 @@ margin=.5em}]{dfn}
 \begin{frame}
     \[
         \begin{aligned}
-            T(n) & \le c_1(n-1)^2 + \Theta(n) \\
-            & \le c_1n^2 - c(2n-1) + \Theta(n) \\
+            T(n) & \le c_1(n-1)^2 + \Theta(n) \\ \pause
+            & \le c_1n^2 - c(2n-1) + \Theta(n) \\ \pause
             & \le c_1n^2    
         \end{aligned}
     \]
@@ -241,7 +240,7 @@ margin=.5em}]{dfn}
     \begin{lemma}
         크기가 n인 배열에 대해 QUICKSORT의 전체 실행 동안 PARTITION의 4행에서 수행되는 비교 횟수를 X라 하자. QUICKSORT의 실행시간은 O(N+X)이다.    
     \end{lemma}
-
+    \pause
     \begin{proof}
         알고리즘은 PARTITION을 최대 n회 호출한다. 각 호출은 for 루프를 실행하는데, for 루프의 각 반복은 4행 비교문을 실행한다.    
     \end{proof}
@@ -250,9 +249,9 @@ margin=.5em}]{dfn}
 
 \begin{frame}{}
     \begin{itemize}
-        \item 각 호출에 대한 비교를 분석하지않고 총 비교수를 계산
-        \item 배열 $A = \{z_1 , z_2, ... , z_n\}$의 각 요소가 내림차순으로 정렬
-        \item 집합 $Z_{ij} = \{z_i, z_{i+1}, ..., z_j\}$
+        \item 각 호출에 대한 비교를 분석하지않고 총 비교수를 계산 \pause
+        \item 배열 $A = \{z_1 , z_2, ... , z_n\}$의 각 요소가 내림차순으로 정렬  \pause
+        \item 집합 $Z_{ij} = \{z_i, z_{i+1}, ..., z_j\}$ 
         \pause
         \item $z_i$와 $z_j$는 최대 한번 비교
         \pause
@@ -264,8 +263,8 @@ margin=.5em}]{dfn}
 
 \begin{frame}{}
     \begin{itemize}
-        \item $X_{ij} = I\{ z_i$가 $z_j$와 비교한다 $\}$
-        \item $ X = \sum_{i=1}^{n-1}\sum_{j=i+1}^{n} X_{ij}$
+        \item $X_{ij} = I\{ z_i$가 $z_j$와 비교한다 $\}$  \pause
+        \item $ \displaystyle X = \sum_{i=1}^{n-1}\sum_{j=i+1}^{n} X_{ij}$
     \end{itemize}
     
     \[
@@ -297,8 +296,8 @@ margin=.5em}]{dfn}
     
 \begin{frame}{상한}
     
-$$E[X] =  \sum_{i=1}^{n-1}\sum_{j=i+1}^{n} \dfrac{2}{j-i+1}$$
-$j-i$을 $k$로 치환
+$$E[X] =  \sum_{i=1}^{n-1}\sum_{j=i+1}^{n} \dfrac{2}{j-i+1}$$  \pause
+$j-i$을 $k$로 치환  \pause
 
 \[
     \begin{aligned}
@@ -331,6 +330,11 @@ $j-i$을 $k$로 치환
 \end{frame}
 
 
+\end{document}
+
+% \stop
+
+
 % \begin{frame}{}
 %     \begin{figure}[h!]
 %         %\centering
@@ -339,11 +343,6 @@ $j-i$을 $k$로 치환
 %     \end{figure}
 % \end{frame}    
 
-
-
-\end{document}
-
-% \stop
 
 
 % \begin{frame}{$O$}
