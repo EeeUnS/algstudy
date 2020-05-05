@@ -6,11 +6,15 @@
 
 
 1. 주차 시간복잡도 기초 : 기본적인 수학
+
+
 선수들을것.
 -  [권오흠 교수님 시간복잡도 19강 예습](https://www.youtube.com/watch?v=kg-bcK1ygIA&list=PL52K_8WQO5oXIATx2vcTvqwxXxoGxxsIz&index=43)
 
 
 2. 주차 insertion sort,  분할정복 , 최대부분수열
+
+
 선수들을것 
 - [insertion sort 5분컷](https://youtu.be/iqf96rVQ8fY?list=PLLcbGhhl4sQCiZxLuqDDDH6q-rc4wyaKe)
 - [recursion 이해하기 1강](https://youtu.be/ln7AfppN7mY?list=PL52K_8WQO5oUuH06MLOrah4h05TZ4n38l)
@@ -18,6 +22,7 @@
 [최대 부분 수열 백준문제](https://www.acmicpc.net/problem/1912)
 
 3. 주차 : 재귀트리, 머지소트
+
 
 선수 들을것
 - [merge sort 5분컷](https://youtu.be/FCAtxryNgq4?list=PLLcbGhhl4sQCiZxLuqDDDH6q-rc4wyaKe)
@@ -36,6 +41,7 @@
 
 
 6. 큌정렬 분석
+
 
 선수 들을것 
 - [퀵소트 13분컷](https://youtu.be/cWH49IKDIiI)
