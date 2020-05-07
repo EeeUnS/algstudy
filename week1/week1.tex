@@ -178,8 +178,8 @@ margin=.5em}]{dfn}
 \begin{frame}{}
 $    
 \begin{aligned}
-        &\sum_{k=2}^n \dfrac{1}{k}+1 \le \int_{2}^{n+1}f(x)dx +1= \ln (x)+1 = O(\ln x) \\
-        &\int_{1}^{n+1}f(x)dx =\ln (x+1) = \Omega(\ln x) \le \sum_{k=1}^n \dfrac{1}{k}  \\
+        &\sum_{k=2}^n \dfrac{1}{k}+1 \ge \int_{2}^{n+1}f(x)dx +1= \ln (n)+1 = \Omega(\ln n) \\
+        &\int_{1}^{n+1}f(x)dx =\ln (n+1) = O(\ln n) \ge \sum_{k=1}^n \dfrac{1}{k}  \\
         & \therefore  \sum_{k=1}^n \dfrac{1}{k} = \Theta(\lg n)
     \end{aligned}
 $
