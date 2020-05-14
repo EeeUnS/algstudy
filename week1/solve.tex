@@ -1,0 +1,33 @@
+\documentclass{oblivoir}
+\usepackage{amsmath}
+
+
+\begin{document}
+
+
+\section{} 
+$b>0$인 임의의 실수 상수 $a$와 $b$에 대해 다음을 보여라
+$$(n+a)^b = \Theta(n^b)$$
+
+$c_1n^b \le (n+a)^b \le c_2n^b$
+
+$c_1 = 1/2, c_2 = 2$로 잡자.
+이를 각각 연립하면 된다.
+
+$n_0$를 잡는게 관건인데 각각을 한번 연립해보자.
+
+\section{} 
+$\displaystyle\sum_{k=1}^n \dfrac{1}{k^2}$의 상한이 상수임을 보여라.
+$\sum_{k=1}^n \dfrac{1}{k^2} \le \int_{1}^{n} \dfrac{1}{k^2} dk + 1 = \left[-\dfrac{1}{k}\right]^{n}_{1} + 1 = 2 - \dfrac{1}{n} \le 2$
+
+
+
+
+\section{} 
+적분을 이용해 $\displaystyle\sum_{k=1}^n k^3$의 근사값을 구하라.
+
+시그마공식 : $\left( \dfrac{n(n+1)}{2} \right)^2$
+
+
+$\sum_{k=1}^n k^3 \le \int_{1}^{n+1}  k^3 dk = \left[\dfrac{1}{4} k^4\right]^{n+1}_{1} = \dfrac{(n+1)^4 - 1}{4} = O(n^4)$
+\end{document}
