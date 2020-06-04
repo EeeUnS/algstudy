@@ -87,19 +87,21 @@ margin=.5em}]{dfn}
 \subsection{Indicator random variables} 
 
 \begin{frame}{평균 수행시간}
+    \pause
     \begin{itemize}
-        \item 입력 값의 분포에 대한 수행시간의 평균값.
-        \item $\Pr$ : 확률
+        \item 입력 값의 분포에 대한 수행시간의 평균값.\pause
+        \item $\Pr$ : 확률\pause
+        \item x : 특정 입력값에 대해서 걸리는 수행시간\pause
         \item $\displaystyle E[X] = \sum_{x=1}^n x\Pr\{X=x\}$
     \end{itemize}
 \end{frame}
 
 \begin{frame}{고용 문제}
     \begin{itemize}
-        \item 매일 한명씩 지원자가 와서 면접을 본다.
-        \item 지원자가 현재 고용자보다 뛰어나면 해고하고 지원자를 고용한다.
-        \item 이때 면접 비용 $c_i$와 고용 비용 $c_h$가 든다.
-        \item 고용 비용이 면접 비용보다 훨씬 비싸다.
+        \item 매일 한명씩 지원자가 와서 면접을 본다. \pause
+        \item 지원자가 현재 고용자보다 뛰어나면 해고하고 지원자를 고용한다.\pause
+        \item 이때 면접 비용 $c_i$와 고용 비용 $c_h$가 든다.\pause
+        \item 고용 비용이 면접 비용보다 훨씬 비싸다.\pause
         \item 이때 면접과 고용에 드는 비용을 알고싶다.
     \end{itemize}
 \end{frame}
@@ -151,8 +153,8 @@ margin=.5em}]{dfn}
 
 \begin{frame}{}
     \begin{itemize}
-        \item $X$ : 새로운 직원을 고용한 횟수에 대한 확률 변수.
-        \item $X_i$ : $i$번째 지원자가 고용되었는지에 대한 지표 확률 변수.
+        \item $X$ : 새로운 직원을 고용한 횟수에 대한 확률 변수.\pause
+        \item $X_i$ : $i$번째 지원자가 고용되었는지에 대한 지표 확률 변수.\pause
     \end{itemize}
 
     \begin{align*}
@@ -162,6 +164,7 @@ margin=.5em}]{dfn}
         0 &\mbox{(지원자 $i$가 고용 안됨)}
     \end{cases}    
     \end{align*}
+    \pause
     $X = X_1 + X_2 + \cdots + X_n$
 \end{frame}
 
@@ -189,7 +192,7 @@ margin=.5em}]{dfn}
 
 \begin{frame}{결론}
     \begin{itemize}
-        \item 평균 고용 비용 : $O(c_h \ln n)$
+        \item 평균 고용 비용 : $O(c_h \ln n)$\pause
         \item 총 평균 : $O(c_in + c_n \ln n)$
     \end{itemize}
 

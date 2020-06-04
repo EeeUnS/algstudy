@@ -1,0 +1,73 @@
+\documentclass{oblivoir}
+\usepackage{multicol}
+
+
+
+\begin{document}
+    
+\begin{multicols}{2}
+
+
+마스터 정리를 이용하여 다음의 점근적 한계를 구하여라.
+
+\section{}
+
+$T(n) = 2T(n/4) + 1$
+
+\begin{itemize}
+    \item $a = 2$
+    \item $b = 4$
+    \item $f(n) = 1$
+    \item $n^{\log_b a} = n^{1/2} = \sqrt{n}$
+    \item case 1
+    \item $T(n) = \Theta(\sqrt{n})$
+\end{itemize}
+
+
+
+\section{}
+
+$T(n) = 2T(n/4) + \sqrt{n}$
+
+\begin{itemize}
+    \item $a = 2$
+    \item $b = 4$
+    \item $f(n) = \sqrt{n}$
+    \item $n^{\log_b a} = n^{1/2} = \sqrt{n}$ 
+    \item case 2
+    \item $T(n) = \Theta(\sqrt{n}\log n)$
+\end{itemize}
+
+
+\section{}
+
+$T(n) = 2T(n/4) + n$
+
+\begin{itemize}
+    \item $a = 2$
+    \item $b = 4$
+    \item $f(n) = n$
+    \item $n^{\log_b a} = n^{1/2} = \sqrt{n}$
+    \item $n/2 \le cn$
+    \item case 3
+    \item $T(n) = \Theta(n)$
+\end{itemize}
+
+
+\section{}
+
+$T(n) = 2T(n/4) + n^2$
+
+
+\begin{itemize}
+    \item $a = 2$
+    \item $b = 4$
+    \item $f(n) = n^2$
+    \item $n^{\log_b a} = n^{1/2} = \sqrt{n}$
+    \item $2(n/4)^2  \le cn^2$
+    \item case 3
+    \item $T(n) = \Theta(n^2)$
+\end{itemize}
+\end{multicols}
+
+\end{document}
